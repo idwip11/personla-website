@@ -18,13 +18,13 @@ export const PROFILE = {
 
 export const DEMOS = [
   {
-    title: "Inventory Analytics Dashboard Demo",
-    videoId: "dQw4w9WgXcQ",
-    description: "Live demonstration of real-time stock tracking and alert systems."
+    title: "Demo PMS-guesthouse-fullstack",
+    videoId: "kyWiq2Ekd8c",
+    description: "Full-stack Property Management System (PMS) for guesthouses with booking management, room mapping, and expense tracking. Built with TypeScript and Node.js."
   },
   {
     title: "Sales Performance Analysis Walkthrough",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "kyWiq2Ekd8c",
     description: "Explaining the SQL queries and business insights derived from the dataset."
   }
 ];
