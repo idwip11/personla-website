@@ -12,7 +12,7 @@ export const PROFILE = {
     { name: "Instagram", url: "https://www.instagram.com/imamdpurwanto/", icon: Instagram },
     { name: "Medium", url: "https://medium.com/@imamdwi/", icon: BookOpen },
     { name: "Email", url: "mailto:imamdpurwanto11@gmail.com", icon: Mail },
-    { name: "Resume", url: "https://drive.google.com/file/d/1fL48CuwtNFT61CYIJzLkzFiIvOPLSi2B/view?usp=sharing", icon: FileText },
+
   ]
 };
 

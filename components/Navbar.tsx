@@ -17,12 +17,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
 
-           <a 
-             href="#" 
-             className="hidden md:block px-4 py-1.5 text-xs font-medium text-white bg-[var(--color-btn-primary-bg)] hover:bg-[var(--color-btn-primary-hover-bg)] border border-[rgba(240,246,252,0.1)] rounded-md transition-colors"
-           >
-             Resume
-           </a>
+
         </div>
       </div>
     </header>
