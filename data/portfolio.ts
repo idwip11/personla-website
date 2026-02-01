@@ -31,6 +31,15 @@ export const DEMOS = [
 
 export const PROJECTS = [
   {
+    title: "Fastboat Booking System",
+    description: "A comprehensive fast boat ticket booking system for Lombok & Sumbawa region. Features include real-time scheduling, Midtrans payment gateway integration, admin dashboard, and WhatsApp notifications.",
+    tags: ["Node.js", "Express", "MySQL", "Midtrans", "Fullstack"],
+    category: "fullstack",
+    link: "https://github.com/idwip11/fastboat-booking",
+    repo: "https://github.com/idwip11/fastboat-booking",
+    public: true
+  },
+  {
     title: "PMS-guesthouse-fullstack",
     description: "Full-stack Property Management System (PMS) for guesthouses with booking management, room mapping, and expense tracking. Built with TypeScript and Node.js.",
     tags: ["TypeScript", "Fullstack", "Web App"],
