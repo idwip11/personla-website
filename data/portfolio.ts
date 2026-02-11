@@ -23,9 +23,9 @@ export const DEMOS = [
     description: "Full-stack Property Management System (PMS) for guesthouses with booking management, room mapping, and expense tracking. Built with TypeScript and Node.js."
   },
   {
-    title: "Sales Performance Analysis Walkthrough",
-    videoId: "kyWiq2Ekd8c",
-    description: "Explaining the SQL queries and business insights derived from the dataset."
+    title: "Showcase Project: Sistem Reservasi Fastboat Online dengan Midtrans Payment",
+    videoId: "4gAHknPzryQ",
+    description: "A comprehensive Full-Stack Web Application for booking fast boat tickets online. This system simplifies the reservation process for customers and provides a powerful dashboard for administrators to manage fleets, schedules, and transactions."
   }
 ];
 
