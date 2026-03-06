@@ -26,6 +26,11 @@ export const DEMOS = [
     title: "Showcase Project: Sistem Reservasi Fastboat Online dengan Midtrans Payment",
     videoId: "4gAHknPzryQ",
     description: "A comprehensive Full-Stack Web Application for booking fast boat tickets online. This system simplifies the reservation process for customers and provides a powerful dashboard for administrators to manage fleets, schedules, and transactions."
+  },
+  {
+    title: "Showcase Project: XQLora - Gamified SQL Learning Platform",
+    videoId: "TccakWvAltQ",
+    description: "A gamified learning platform built with Next.js, Docker, and Railway, designed to make learning SQL fun and engaging through interactive logic exercises."
   }
 ];
 
