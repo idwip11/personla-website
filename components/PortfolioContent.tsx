@@ -107,7 +107,7 @@ export default function PortfolioContent() {
             {certificates.map((cert, idx) => (
               <a 
                 key={idx} 
-                href={cert.image}
+                href={cert.link && cert.link !== '#' ? cert.link : (cert.image as string)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="aspect-video bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-md flex items-center justify-center relative overflow-hidden group cursor-pointer"

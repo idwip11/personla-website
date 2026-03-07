@@ -300,5 +300,13 @@ export const PROJECTS = [
     category: "certificate",
     link: "#",
     image: "/images/certificates/myskill-excel-sales-dashboard.jpg"
+  },
+  {
+    title: "Belajar Dasar Data Science",
+    description: "Issued by Dicoding Indonesia",
+    tags: ["Data Science"],
+    category: "certificate",
+    link: "https://www.dicoding.com/certificates/L4PQ96J0OPO1",
+    image: "/images/certificates/dicoding-dasar-data-science.png"
   }
 ];
