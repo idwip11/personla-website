@@ -308,5 +308,13 @@ export const PROJECTS = [
     category: "certificate",
     link: "https://www.dicoding.com/certificates/L4PQ96J0OPO1",
     image: "/images/certificates/dicoding-dasar-data-science.png"
+  },
+  {
+    title: "Belajar Penerapan Data Science dengan Microsoft Fabric",
+    description: "Issued by Dicoding Indonesia",
+    tags: ["Data Science", "Microsoft Fabric"],
+    category: "certificate",
+    link: "https://www.dicoding.com/certificates/RVZK0KQJOZD5",
+    image: "/images/certificates/dicoding-data-science-fabric.png"
   }
 ];
