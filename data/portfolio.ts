@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, FileText, Instagram, BookOpen } from 'lucide-re
 export const PROFILE = {
   name: "Imam Dwi Purwanto",
   role: "Data Analyst & Full-Stack Developer",
-  bio: "Data Analyst with a strong Computer Science background and over 3 years of experience driving business impact through data. Beyond traditional analytics (SQL, Tableau, Excel), I leverage my Vibe Coding skills to build dynamic tools and automated systems. I bridge the gap between raw insights and functional software, turning complex datasets into intuitive, user-centric web applications that empower data-driven decisions.",
+  bio: "Data Analyst with a strong Computer Science background and over 3 years of experience driving business impact through data. Beyond traditional analytics (SQL, Tableau, Excel), I leverage my Vibe Coding skills to build dynamic tools and automated systems. I bridge the gap between raw insights and functional software, turning complex datasets into intuitive, user-centric web applications that empower data-driven decisions.\n\nDo you want to work together? Please reach out to me by e-mail",
   location: "Mataram, Indonesia",
   status: "Open to Opportunities",
   socials: [

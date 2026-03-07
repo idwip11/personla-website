@@ -58,7 +58,7 @@ export default function Hero() {
                 Hi there, I'm {PROFILE.name}! <span className="inline-block animate-wave">👋</span>
               </h1>
               
-              <p className="mb-6 text-[var(--foreground)] leading-relaxed">
+              <p className="mb-6 text-[var(--foreground)] leading-relaxed whitespace-pre-line">
                 {PROFILE.bio}
               </p>
 
