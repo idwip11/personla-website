@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { LayoutGrid, Laptop, Database, FileSpreadsheet, Award } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 import TechStack from './TechStack';
-import { PROJECTS, DEMOS } from '@/data/portfolio';
+import ShowcaseCard from './ShowcaseCard';
+import ShowcaseModal from './ShowcaseModal';
+import { PROJECTS, DEMOS, SHOWCASES } from '@/data/portfolio';
 import { GitHubCalendar } from 'react-github-calendar';
 
 const TABS = [
@@ -16,6 +18,7 @@ const TABS = [
 
 export default function PortfolioContent() {
   const [activeTab, setActiveTab] = useState('overview');
+  const [selectedShowcase, setSelectedShowcase] = useState<typeof SHOWCASES[0] | null>(null);
 
   const filteredProjects = PROJECTS.filter(p => !p.category || p.category === 'fullstack' || p.category === 'data');
   const templates = PROJECTS.filter(p => p.category === 'template');
@@ -73,6 +76,14 @@ export default function PortfolioContent() {
                     </div>
                   </div>
                 ))}
+                {/* Showcase Cards alongside YouTube demos */}
+                {SHOWCASES.map((showcase, idx) => (
+                  <ShowcaseCard
+                    key={`showcase-${idx}`}
+                    showcase={showcase}
+                    onClick={() => setSelectedShowcase(showcase)}
+                  />
+                ))}
               </div>
             </div>
             {/* Github Contribution Graph Placeholder */}
@@ -127,6 +138,14 @@ export default function PortfolioContent() {
           </div>
         )}
       </div>
+
+      {/* Showcase Modal */}
+      {selectedShowcase && (
+        <ShowcaseModal
+          showcase={selectedShowcase}
+          onClose={() => setSelectedShowcase(null)}
+        />
+      )}
     </div>
   );
 }

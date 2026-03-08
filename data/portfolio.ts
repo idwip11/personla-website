@@ -34,6 +34,28 @@ export const DEMOS = [
   }
 ];
 
+export const SHOWCASES = [
+  {
+    title: "Sales Performance Analysis",
+    description: "Comprehensive sales data analysis using SQL queries and Tableau visualizations to identify profitability drivers, regional performance, and discount impact strategies.",
+    previewImage: "/images/showcases/sales-performance-flow.png",
+    tags: ["SQL", "MySQL", "Tableau", "Data Analysis"],
+    projectDescription: "This project focuses on analyzing sales performance to identify key profitability drivers, optimize product assortment, and improve regional sales strategies. By leveraging SQL for data processing and Tableau for visualization, the analysis provides actionable insights into revenue, profit margins, and customer behavior.",
+    keyFeatures: [
+      "Product profitability analysis — identifying 'Problem Products' with high sales but low margins",
+      "Seasonal trend analysis for inventory planning and marketing schedules",
+      "Regional efficiency comparison of sales-to-profit conversion",
+      "Discount impact analysis showing the tipping point where discounts cannibalize profits",
+      "8 complex SQL business queries using CTEs, Window Functions, and Joins",
+      "Interactive Tableau dashboards with sales trend charts and regional maps"
+    ],
+    techStack: ["SQL", "MySQL", "Tableau", "Excel"],
+    pdfUrl: "https://raw.githubusercontent.com/idwip11/Portfolio-DA-Sales-Performance-Analysis/main/Sales%20Performance%20Analysis_with%20MySQL.pdf",
+    githubUrl: "https://github.com/idwip11/Portfolio-DA-Sales-Performance-Analysis",
+    tableauEmbed: `<div class='tableauPlaceholder' id='viz1772954136682' style='position: relative'><noscript><a href='#'><img alt='Dashboard Customer ' src='https://public.tableau.com/static/images/FF/FF92NX6WX/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared/FF92NX6WX' /> <param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/FF/FF92NX6WX/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>`
+  }
+];
+
 export const PROJECTS = [
   {
     title: "Fastboat Booking System",
