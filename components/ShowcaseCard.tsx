@@ -1,10 +1,8 @@
 "use client";
 
-import type { SHOWCASES } from '@/data/portfolio';
+import type { SHOWCASES, ShowcaseItem } from '@/data/portfolio';
 
-type Showcase = typeof SHOWCASES[0];
-
-export default function ShowcaseCard({ showcase, onClick }: { showcase: Showcase; onClick: () => void }) {
+export default function ShowcaseCard({ showcase, onClick }: { showcase: ShowcaseItem; onClick: () => void }) {
   return (
     <div
       onClick={onClick}

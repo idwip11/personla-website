@@ -1,5 +1,19 @@
 import { Github, Linkedin, Mail, FileText, Instagram, BookOpen } from 'lucide-react';
 
+export interface ShowcaseItem {
+  title: string;
+  description: string;
+  previewImage: string;
+  tags: string[];
+  projectDescription: string;
+  keyFeatures: string[];
+  techStack: string[];
+  pdfUrl?: string;
+  githubUrl?: string;
+  tableauEmbed?: string;
+  lookerStudioEmbed?: string;
+}
+
 export const PROFILE = {
   name: "Imam Dwi Purwanto",
   role: "Data Analyst & Full-Stack Developer",
@@ -34,7 +48,7 @@ export const DEMOS = [
   }
 ];
 
-export const SHOWCASES = [
+export const SHOWCASES: ShowcaseItem[] = [
   {
     title: "Sales Performance Analysis",
     description: "Comprehensive sales data analysis using SQL queries and Tableau visualizations to identify profitability drivers, regional performance, and discount impact strategies.",
@@ -53,6 +67,23 @@ export const SHOWCASES = [
     pdfUrl: "https://raw.githubusercontent.com/idwip11/Portfolio-DA-Sales-Performance-Analysis/main/Sales%20Performance%20Analysis_with%20MySQL.pdf",
     githubUrl: "https://github.com/idwip11/Portfolio-DA-Sales-Performance-Analysis",
     tableauEmbed: `<div class='tableauPlaceholder' id='viz1772954136682' style='position: relative'><noscript><a href='#'><img alt='Dashboard Customer ' src='https://public.tableau.com/static/images/FF/FF92NX6WX/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared/FF92NX6WX' /> <param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/FF/FF92NX6WX/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>`
+  },
+  {
+    title: "Retail Strategic Orders Report Dashboard (2014–2017)",
+    description: "An in-depth data analysis of 9,994 retail orders across the US. Uncover critical insights on the 2017 growth surge, regional performance gaps in the South, and consumer segment trends to drive strategic business expansion.",
+    previewImage: "/images/showcases/retail-strategic-orders.png",
+    tags: ["Data Analysis", "Dashboard", "Looker Studio"],
+    projectDescription: "The business operates as a multi-region retail provider specializing in three primary categories: Office Supplies, Furniture, and Technology. Currently, the company serves a diverse customer base of 793 clients across 49 states, managing a total volume of 9,994 orders. The business model is heavily driven by the Consumer segment, which accounts for over half of the total order volume.\n\nRegional Dominance: The West region is the strongest market contributor (32.09%), followed closely by the East. The South region represents the smallest market share (16.2%), indicating a significant opportunity for geographic expansion. Operations are centered in major urban hubs, with New York City and Los Angeles acting as the primary revenue engines. The business is a high-volume provider of Office Supplies, which makes up 60.3% of all orders.\n\nThe business has demonstrated consistent year-over-year growth. After a period of steady performance between 2014 and 2016, there was a major surge in 2017, where order volume peaked at approximately 3,300 orders, marking the most successful year in the recorded history.",
+    keyFeatures: [
+      "Exponential Growth Trend — Total orders increased from ~2,000 in 2014 to over 3,300 in 2017. The sharp increase suggests successful campaigns or expansion in product listings.",
+      "Category Volume vs. Diversification — Office Supplies dominate (6,026 orders), while Technology (1,847 orders) carries higher margins but lower volume, indicating missed high-value revenue streams.",
+      "Regional Performance Gap — The West (3,203 orders) produces nearly double the volume of the South (1,620 orders), requiring a deep dive into logistics, competition, and demographics.",
+      "High Consumer Segment Dependency — Consumer segment accounts for 51.9% of orders. Growing the Corporate segment offers more predictable, recurring, and bulk order patterns.",
+      "Geographic 'Power Cities' — NYC, LA, Philadelphia, SF, and Seattle drive massive order volume. Logistics and supply chain should be optimized for these top-tier cities.",
+      "Strategic Recommendations — Launch targeted growth for the South region, implement cross-selling to move Office Supplies customers toward Technology products, develop B2B loyalty programs, and analyze Standard Class shipping for faster delivery incentives."
+    ],
+    techStack: ["Looker Studio", "Google Sheets", "Data Analysis"],
+    lookerStudioEmbed: `<iframe width="100%" height="600" src="https://lookerstudio.google.com/embed/reporting/cd1e2540-fb9f-48e7-a1c5-783edf92a6ef/page/U8EsF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`
   }
 ];
 
