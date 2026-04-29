@@ -99,7 +99,8 @@ export const SHOWCASES: ShowcaseItem[] = [
       "Scale increases output, but also operational risk",
       "Focus: optimize first, then scale"
     ],
-    techStack: ["Google Sheets (Data Processing & Dashboarding)"]
+    techStack: ["Google Sheets (Data Processing & Dashboarding)"],
+    pdfUrl: "/Dasbor Performa & Skalabilitas Peternakan Telur Bebek.pdf"
   }
 ];
 
