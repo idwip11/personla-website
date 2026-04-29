@@ -89,18 +89,17 @@ export const SHOWCASES: ShowcaseItem[] = [
     title: "Duck Egg Farm Performance Dashboard (Scale-Up Scenario Analysis)",
     description: "A data-driven dashboard analyzing duck egg farm operations, including feed efficiency, production trends, and a 33% scale-up scenario to support strategic decision-making.",
     previewImage: "/images/showcases/duck-egg-farm.png",
-    tags: ["Data Analysis", "Dashboard", "Looker Studio"],
-    projectDescription: "The business operates as a multi-region retail provider specializing in three primary categories: Office Supplies, Furniture, and Technology. Currently, the company serves a diverse customer base of 793 clients across 49 states, managing a total volume of 9,994 orders. The business model is heavily driven by the Consumer segment, which accounts for over half of the total order volume.\n\nRegional Dominance: The West region is the strongest market contributor (32.09%), followed closely by the East. The South region represents the smallest market share (16.2%), indicating a significant opportunity for geographic expansion. Operations are centered in major urban hubs, with New York City and Los Angeles acting as the primary revenue engines. The business is a high-volume provider of Office Supplies, which makes up 60.3% of all orders.\n\nThe business has demonstrated consistent year-over-year growth. After a period of steady performance between 2014 and 2016, there was a major surge in 2017, where order volume peaked at approximately 3,300 orders, marking the most successful year in the recorded history.",
+    tags: ["Google Sheets", "Data Analysis", "Dashboard"],
+    projectDescription: "This project focuses on analyzing the operational performance and scalability of a duck egg farming business. The objective was to transform raw operational data into actionable insights to support data-driven decision-making.\n\nThe analysis covers a population of approximately 150 active ducks, evaluating key performance indicators such as Hen Day Production (HDP), total egg output, cost structure, and profitability trends. The business has shown strong production performance, exceeding monthly targets with 2,488 eggs produced (124% of target), alongside a +52% month-over-month profit growth.\n\nHowever, deeper analysis reveals underlying inefficiencies. The HDP stands at 59.24%, significantly below the optimal benchmark of 80%, indicating that productivity per duck is not yet maximized. Additionally, feed costs dominate the expense structure, accounting for approximately 58% of total operational costs, making it the most critical driver of profitability.\n\nTo support strategic planning, a what-if scenario modeling was conducted to simulate a 33% scale-up (from 150 to 200 ducks). The analysis evaluates the impact on feed consumption, inventory turnover, operational costs, and projected daily egg output under optimal conditions.",
     keyFeatures: [
-      "Exponential Growth Trend — Total orders increased from ~2,000 in 2014 to over 3,300 in 2017. The sharp increase suggests successful campaigns or expansion in product listings.",
-      "Category Volume vs. Diversification — Office Supplies dominate (6,026 orders), while Technology (1,847 orders) carries higher margins but lower volume, indicating missed high-value revenue streams.",
-      "Regional Performance Gap — The West (3,203 orders) produces nearly double the volume of the South (1,620 orders), requiring a deep dive into logistics, competition, and demographics.",
-      "High Consumer Segment Dependency — Consumer segment accounts for 51.9% of orders. Growing the Corporate segment offers more predictable, recurring, and bulk order patterns.",
-      "Geographic 'Power Cities' — NYC, LA, Philadelphia, SF, and Seattle drive massive order volume. Logistics and supply chain should be optimized for these top-tier cities.",
-      "Strategic Recommendations — Launch targeted growth for the South region, implement cross-selling to move Office Supplies customers toward Technology products, develop B2B loyalty programs, and analyze Standard Class shipping for faster delivery incentives."
+      "HDP below optimal (59% vs 80%)",
+      "Performance driven by volume, not efficiency",
+      "Feed cost (~58%) as primary profit lever",
+      "Cost per egg (Rp753) still improvable",
+      "Scale increases output, but also operational risk",
+      "Focus: optimize first, then scale"
     ],
-    techStack: ["Looker Studio", "Google Sheets", "Data Analysis"],
-    lookerStudioEmbed: `<iframe width="100%" height="600" src="https://lookerstudio.google.com/embed/reporting/cd1e2540-fb9f-48e7-a1c5-783edf92a6ef/page/U8EsF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`
+    techStack: ["Google Sheets (Data Processing & Dashboarding)"]
   }
 ];
 
