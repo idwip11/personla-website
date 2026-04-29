@@ -88,7 +88,7 @@ export const SHOWCASES: ShowcaseItem[] = [
   {
     title: "Duck Egg Farm Performance Dashboard (Scale-Up Scenario Analysis)",
     description: "A data-driven dashboard analyzing duck egg farm operations, including feed efficiency, production trends, and a 33% scale-up scenario to support strategic decision-making.",
-    previewImage: "/images/showcases/retail-strategic-orders.png",
+    previewImage: "/images/showcases/duck-egg-farm.png",
     tags: ["Data Analysis", "Dashboard", "Looker Studio"],
     projectDescription: "The business operates as a multi-region retail provider specializing in three primary categories: Office Supplies, Furniture, and Technology. Currently, the company serves a diverse customer base of 793 clients across 49 states, managing a total volume of 9,994 orders. The business model is heavily driven by the Consumer segment, which accounts for over half of the total order volume.\n\nRegional Dominance: The West region is the strongest market contributor (32.09%), followed closely by the East. The South region represents the smallest market share (16.2%), indicating a significant opportunity for geographic expansion. Operations are centered in major urban hubs, with New York City and Los Angeles acting as the primary revenue engines. The business is a high-volume provider of Office Supplies, which makes up 60.3% of all orders.\n\nThe business has demonstrated consistent year-over-year growth. After a period of steady performance between 2014 and 2016, there was a major surge in 2017, where order volume peaked at approximately 3,300 orders, marking the most successful year in the recorded history.",
     keyFeatures: [
