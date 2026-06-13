@@ -98,7 +98,7 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
               </div>
               {showcase.keyFeatures.length > 0 && (
                 <>
-                  <h4 className="text-sm font-semibold text-[var(--foreground)] mb-2">Key Insights & Recommendations:</h4>
+                  <h4 className="text-sm font-semibold text-[var(--foreground)] mb-2">{showcase.keyFeaturesTitle || "Key Insights & Recommendations:"}</h4>
                   <ul className="space-y-1.5">
                     {showcase.keyFeatures.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-[var(--foreground)] opacity-80">
