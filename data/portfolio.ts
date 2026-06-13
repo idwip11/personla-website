@@ -105,7 +105,7 @@ export const SHOWCASES: ShowcaseItem[] = [
   {
     title: "Generational Demographics of West Nusa Tenggara (NTB) – 2025",
     description: "Default description. (Please update this later with your specific overview of the demographic insights).",
-    previewImage: "https://public.tableau.com/static/images/RG/RG58NG6PG/1.png",
+    previewImage: "/images/showcases/ntb-demographics.png",
     tags: ["Tableau", "Data Analysis", "Demographics"],
     projectDescription: "This dashboard provides a comprehensive analysis of the generational demographics of West Nusa Tenggara (NTB) for the year 2025. It segments the population across various generation cohorts—Gen Z, Millennials, Gen X, and Baby Boomers—offering detailed regional breakdowns by district. Through interactive data visualizations, it aims to uncover insights that support regional development planning and demographic research.",
     keyFeatures: [
