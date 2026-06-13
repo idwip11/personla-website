@@ -101,6 +101,21 @@ export const SHOWCASES: ShowcaseItem[] = [
     ],
     techStack: ["Google Sheets (Data Processing & Dashboarding)"],
     pdfUrl: "/Dasbor Performa & Skalabilitas Peternakan Telur Bebek.pdf"
+  },
+  {
+    title: "Generational Demographics of West Nusa Tenggara (NTB) – 2025",
+    description: "Default description. (Please update this later with your specific overview of the demographic insights).",
+    previewImage: "https://public.tableau.com/static/images/RG/RG58NG6PG/1.png",
+    tags: ["Tableau", "Data Analysis", "Demographics"],
+    projectDescription: "This dashboard provides a comprehensive analysis of the generational demographics of West Nusa Tenggara (NTB) for the year 2025. It segments the population across various generation cohorts—Gen Z, Millennials, Gen X, and Baby Boomers—offering detailed regional breakdowns by district. Through interactive data visualizations, it aims to uncover insights that support regional development planning and demographic research.",
+    keyFeatures: [
+      "Generational breakdown of the NTB population (Gen Z, Millennials, Gen X, Boomers)",
+      "Interactive geographic mapping across NTB districts and cities",
+      "Dynamic population pyramids comparing age groups and genders",
+      "Actionable data insights for government policy and market analysis"
+    ],
+    techStack: ["Tableau", "Data Analysis"],
+    tableauEmbed: `<div class='tableauPlaceholder' id='viz1781345293144' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RG&#47;RG58NG6PG&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;RG58NG6PG' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RG&#47;RG58NG6PG&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>`
   }
 ];
 
