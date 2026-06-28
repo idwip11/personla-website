@@ -75,8 +75,8 @@ export const SHOWCASES: ShowcaseItem[] = [
       "Advanced Formulas (XLOOKUP, SUMIFS, INDEX-MATCH, LET, etc.)",
       "Business KPI Analysis"
     ],
-    presentationUrl: "/docs/hospitality-presentation.pdf",
-    executiveSummaryUrl: "/docs/hospitality-summary.pdf"
+    presentationUrl: "/hospitality-presentation.pdf",
+    executiveSummaryUrl: "/hospitality-summary.pdf"
   },
   {
     title: "Sales Performance Analysis",
