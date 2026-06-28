@@ -9,6 +9,8 @@ export interface ShowcaseItem {
   keyFeatures: string[];
   techStack: string[];
   pdfUrl?: string;
+  presentationUrl?: string;
+  executiveSummaryUrl?: string;
   githubUrl?: string;
   tableauEmbed?: string;
   lookerStudioEmbed?: string;
@@ -72,7 +74,9 @@ export const SHOWCASES: ShowcaseItem[] = [
       "Excel Dashboard",
       "Advanced Formulas (XLOOKUP, SUMIFS, INDEX-MATCH, LET, etc.)",
       "Business KPI Analysis"
-    ]
+    ],
+    presentationUrl: "/docs/hospitality-presentation.pdf",
+    executiveSummaryUrl: "/docs/hospitality-summary.pdf"
   },
   {
     title: "Sales Performance Analysis",

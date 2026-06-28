@@ -129,30 +129,76 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
             </section>
           )}
 
-          {/* Project Report - PDF (Conditional) */}
-          {showcase.pdfUrl && (
+          {/* Project Report - PDFs (Conditional) */}
+          {(showcase.pdfUrl || showcase.presentationUrl || showcase.executiveSummaryUrl) && (
             <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Project Report</h3>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={showcase.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
-              >
-                <Eye size={16} />
-                View PDF
-              </a>
-              <a
-                href={showcase.pdfUrl}
-                download
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
-              >
-                <Download size={16} />
-                Download
-              </a>
-            </div>
-          </section>
+              <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Project Reports</h3>
+              <div className="flex flex-col gap-4">
+                {showcase.pdfUrl && (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={showcase.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
+                    >
+                      <Eye size={16} />
+                      View PDF
+                    </a>
+                    <a
+                      href={showcase.pdfUrl}
+                      download
+                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
+                    >
+                      <Download size={16} />
+                      Download PDF
+                    </a>
+                  </div>
+                )}
+                {showcase.presentationUrl && (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={showcase.presentationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
+                    >
+                      <Eye size={16} />
+                      View Presentation Data
+                    </a>
+                    <a
+                      href={showcase.presentationUrl}
+                      download
+                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
+                    >
+                      <Download size={16} />
+                      Download
+                    </a>
+                  </div>
+                )}
+                {showcase.executiveSummaryUrl && (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={showcase.executiveSummaryUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
+                    >
+                      <Eye size={16} />
+                      View Executive Summary
+                    </a>
+                    <a
+                      href={showcase.executiveSummaryUrl}
+                      download
+                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
+                    >
+                      <Download size={16} />
+                      Download
+                    </a>
+                  </div>
+                )}
+              </div>
+            </section>
           )}
 
           {/* GitHub Link (Conditional) */}
