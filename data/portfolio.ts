@@ -51,6 +51,30 @@ export const DEMOS = [
 
 export const SHOWCASES: ShowcaseItem[] = [
   {
+    title: "Hospitality Business Performance Analysis",
+    description: "An analysis of operational and financial performance for HomiQ, transforming booking data into strategic insights for revenue growth and profitability.",
+    previewImage: "/images/showcases/hospitality-analysis.png",
+    tags: ["Microsoft Excel", "Data Analysis", "Dashboard"],
+    projectDescription: "This project analyzes the operational and financial performance of HomiQ, a hospitality property management company operating multiple guesthouses, villas, and homestays in Yogyakarta. The objective was to transform booking and operational data into strategic business insights that support revenue growth, profitability improvement, and more efficient portfolio management.\n\nThe analysis evaluates property performance, booking behavior, seasonal demand patterns, occupancy trends, revenue distribution, profitability, and booking channel effectiveness across HomiQ's accommodation portfolio. The project also incorporates external market benchmarks from BPS to compare occupancy performance against the local hospitality industry.\n\nThrough exploratory data analysis and business performance evaluation, several strategic issues were identified, including revenue concentration in a single property, strong seasonal demand fluctuations, heavy dependence on OTA platforms, and untapped opportunities in customer segmentation and property positioning.\n\nBased on these findings, actionable recommendations were developed, including optimizing underperforming properties, increasing direct bookings, improving weekday occupancy, and implementing clearer customer segmentation strategies to support long-term business growth and higher profit margins.",
+    keyFeatures: [
+      "Revenue is heavily concentrated in a single flagship property.",
+      "OTA channels contribute over 70% of total revenue, reducing overall profit margins through commission costs.",
+      "Weekend and peak-season demand significantly outperform weekday occupancy.",
+      "Smaller properties present opportunities for better positioning and utilization.",
+      "Customer segmentation and direct booking strategies can improve long-term profitability and reduce OTA dependency."
+    ],
+    techStack: [
+      "Microsoft Excel",
+      "Power Query",
+      "Pivot Tables",
+      "Pivot Charts",
+      "Power Pivot",
+      "Excel Dashboard",
+      "Advanced Formulas (XLOOKUP, SUMIFS, INDEX-MATCH, LET, etc.)",
+      "Business KPI Analysis"
+    ]
+  },
+  {
     title: "Sales Performance Analysis",
     description: "Comprehensive sales data analysis using SQL queries and Tableau visualizations to identify profitability drivers, regional performance, and discount impact strategies.",
     previewImage: "/images/showcases/sales-performance-flow.png",
