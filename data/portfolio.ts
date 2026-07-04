@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, FileText, Instagram, BookOpen } from 'lucide-react';
+import TableauIcon from '@/components/TableauIcon';
 
 export interface ShowcaseItem {
   title: string;
@@ -27,6 +28,7 @@ export const PROFILE = {
     { name: "GitHub", url: "https://github.com/idwip11", icon: Github },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/imam-dwi-purwanto/", icon: Linkedin },
     { name: "Instagram", url: "https://www.instagram.com/imamdpurwanto/", icon: Instagram },
+    { name: "Tableau", url: "https://public.tableau.com/app/profile/imam.dwi/vizzes", icon: TableauIcon },
     { name: "Medium", url: "https://medium.com/@imamdwi/", icon: BookOpen },
     { name: "Email", url: "mailto:imamdpurwanto11@gmail.com", icon: Mail },
 
