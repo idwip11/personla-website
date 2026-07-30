@@ -1,8 +1,6 @@
 export const SKILLS = [
-    "JavaScript", "TypeScript", "React", "Next.js", 
-    "Node.js", "Python", "SQL", "Tailwind CSS",
-    "PostgreSQL", "Excel / VBA", "Tableau", "Power BI"
-  ];
+  "SQL", "Python", "Excel", "Tableau", "Power BI", "PostgreSQL", "Next.js"
+];
   
   export default function TechStack() {
     return (
