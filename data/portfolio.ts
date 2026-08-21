@@ -154,6 +154,51 @@ export const SHOWCASES: ShowcaseItem[] = [
 
 export const PROJECTS = [
   {
+    title: "Duck-Counter-Smart-Farming-Computer-Vision",
+    description: "A smart farming computer vision system built with Python to automatically count and monitor livestock ducks.",
+    tags: ["Python", "Computer Vision", "AI", "Smart Farming"],
+    category: "data",
+    link: "https://github.com/idwip11/Duck-Counter-Smart-Farming-Computer-Vision",
+    repo: "https://github.com/idwip11/Duck-Counter-Smart-Farming-Computer-Vision",
+    public: true
+  },
+  {
+    title: "admin-pannel-xqlora",
+    description: "Admin dashboard and management interface for the XQLora gamified SQL learning platform.",
+    tags: ["Python", "Admin Panel", "Dashboard"],
+    category: "data",
+    link: "https://github.com/idwip11/admin-pannel-xqlora",
+    repo: "https://github.com/idwip11/admin-pannel-xqlora",
+    public: true
+  },
+  {
+    title: "silsilah",
+    description: "An interactive web application for generating family trees and mapping genealogy.",
+    tags: ["TypeScript", "Web App"],
+    category: "fullstack",
+    link: "https://github.com/idwip11/silsilah",
+    repo: "https://github.com/idwip11/silsilah",
+    public: true
+  },
+  {
+    title: "rumah-kucing",
+    description: "A comprehensive web application for managing cat care and shelter operations.",
+    tags: ["TypeScript", "Web App"],
+    category: "fullstack",
+    link: "https://github.com/idwip11/rumah-kucing",
+    repo: "https://github.com/idwip11/rumah-kucing",
+    public: true
+  },
+  {
+    title: "PMS-v2",
+    description: "Next-generation Property Management System with enhanced features and a modern user interface.",
+    tags: ["JavaScript", "PMS", "Web App"],
+    category: "fullstack",
+    link: "https://github.com/idwip11/PMS-v2",
+    repo: "https://github.com/idwip11/PMS-v2",
+    public: true
+  },
+  {
     title: "Fastboat Booking System",
     description: "A comprehensive fast boat ticket booking system for Lombok & Sumbawa region. Features include real-time scheduling, Midtrans payment gateway integration, admin dashboard, and WhatsApp notifications.",
     tags: ["Node.js", "Express", "MySQL", "Midtrans", "Fullstack"],
