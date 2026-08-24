@@ -377,6 +377,30 @@ export const PROJECTS = [
     link: "https://lynk.id/bantu.kerjaan/DWovRmB"
   },
   {
+    title: "Statistics Foundations Professional Certificate by Wolfram Research",
+    description: "Issued by Wolfram Research via LinkedIn Learning",
+    tags: ["Wolfram Language", "Statistics", "Microsoft Excel"],
+    category: "certificate",
+    link: "#",
+    image: "/images/certificates/statistics-foundations-wolfram.png"
+  },
+  {
+    title: "Getting Started as a Full-Stack Web Developer",
+    description: "Issued by CompTIA via LinkedIn Learning",
+    tags: ["Web Development", "Full-Stack Development"],
+    category: "certificate",
+    link: "#",
+    image: "/images/certificates/full-stack-web-developer-comptia.png"
+  },
+  {
+    title: "Career Essentials in GitHub Professional Certificate",
+    description: "Issued by GitHub via LinkedIn Learning",
+    tags: ["GitHub"],
+    category: "certificate",
+    link: "#",
+    image: "/images/certificates/github-career-essentials.png"
+  },
+  {
     title: "Business Intelligence (BI) Essentials",
     description: "Issued by IBM via Coursera",
     tags: ["IBM", "Business Intelligence", "Coursera"],
