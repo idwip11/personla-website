@@ -12,10 +12,7 @@ export default function ShowcaseCard({ showcase, onClick }: { showcase: Showcase
         <img
           src={showcase.previewImage}
           alt={showcase.title}
-          className={showcase.previewImageFit === 'contain'
-            ? "w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-[1.03]"
-            : "w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-          }
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
         />
       </div>
       <div>
