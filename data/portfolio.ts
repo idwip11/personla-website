@@ -179,6 +179,15 @@ export const SHOWCASES: ShowcaseItem[] = [
 
 export const PROJECTS = [
   {
+    title: "FIFA World Cup 2026 Simulator",
+    description: "An interactive World Cup prediction app for entering group-stage scores, calculating standings automatically, and mapping qualified teams through a complete knockout bracket.",
+    tags: ["React", "Vite", "JavaScript", "Tournament Simulator"],
+    category: "fullstack",
+    link: "https://github.com/idwip11/bracket-WC",
+    repo: "https://github.com/idwip11/bracket-WC",
+    public: true
+  },
+  {
     title: "Duck-Counter-Smart-Farming-Computer-Vision",
     description: "A smart farming computer vision system built with Python to automatically count and monitor livestock ducks.",
     tags: ["Python", "Computer Vision", "AI", "Smart Farming"],
