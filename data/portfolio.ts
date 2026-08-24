@@ -57,11 +57,11 @@ export const DEMOS = [
 export const SHOWCASES: ShowcaseItem[] = [
   {
     title: "Adiputra PMS - HomiQ Internal App",
-    description: "Internal property management system for HomiQ, centralizing reservations, rooms, housekeeping, finance, maintenance, and reporting workflows.",
+    description: "Internal property management system for HomiQ, centralizing property operations while supporting funding partners and property clients through transparent revenue-sharing management and reporting.",
     previewImage: "/images/showcases/homiq-pms-logo.png",
     previewImageFit: "contain",
     tags: ["PHP", "CodeIgniter 4", "MySQL"],
-    projectDescription: "An internal property management system built for HomiQ's Adiputra operations. The application centralizes reservation, room, housekeeping, finance, maintenance, and reporting workflows. A detailed case study and project walkthrough will be added in a future update.",
+    projectDescription: "An internal property management system built for HomiQ's Adiputra operations. The application centralizes reservation, room, housekeeping, finance, maintenance, and reporting workflows, while also supporting funding partners and property clients involved in revenue-sharing arrangements. A detailed case study and project walkthrough will be added in a future update.",
     keyFeatures: [],
     techStack: ["PHP 8.3", "CodeIgniter 4", "MySQL", "JavaScript", "CSS"],
     githubUrl: "https://github.com/idwip11/PMS-v2"
