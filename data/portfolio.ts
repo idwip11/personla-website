@@ -5,6 +5,7 @@ export interface ShowcaseItem {
   title: string;
   description: string;
   previewImage: string;
+  previewImageFit?: 'cover' | 'contain';
   tags: string[];
   projectDescription: string;
   keyFeatures: string[];
@@ -54,6 +55,17 @@ export const DEMOS = [
 ];
 
 export const SHOWCASES: ShowcaseItem[] = [
+  {
+    title: "Adiputra PMS - HomiQ Internal App",
+    description: "Internal property management system for HomiQ, centralizing reservations, rooms, housekeeping, finance, maintenance, and reporting workflows.",
+    previewImage: "/images/showcases/homiq-pms-logo.png",
+    previewImageFit: "contain",
+    tags: ["PHP", "CodeIgniter 4", "MySQL"],
+    projectDescription: "An internal property management system built for HomiQ's Adiputra operations. The application centralizes reservation, room, housekeeping, finance, maintenance, and reporting workflows. A detailed case study and project walkthrough will be added in a future update.",
+    keyFeatures: [],
+    techStack: ["PHP 8.3", "CodeIgniter 4", "MySQL", "JavaScript", "CSS"],
+    githubUrl: "https://github.com/idwip11/PMS-v2"
+  },
   {
     title: "Hospitality Business Performance Analysis",
     description: "An analysis of operational and financial performance for HomiQ, transforming booking data into strategic insights for revenue growth and profitability.",
