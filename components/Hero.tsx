@@ -69,12 +69,12 @@ export default function Hero() {
               <div className="bg-[var(--color-canvas-subtle)] p-4 rounded-md font-mono text-sm border border-[var(--color-border-default)]">
                 <span className="text-purple-400">const</span> <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{`{`}</span><br/>
                 &nbsp;&nbsp;<span className="text-red-400">name</span>: <span className="text-green-400">'{PROFILE.name}'</span>,<br/>
-                &nbsp;&nbsp;<span className="text-red-400">role</span>: <span className="text-green-400">'Data Analyst, BI & Vibe Coding'</span>,<br/>
+                &nbsp;&nbsp;<span className="text-red-400">role</span>: <span className="text-green-400">'Data Analyst & Full-Stack Developer'</span>,<br/>
                 &nbsp;&nbsp;<span className="text-red-400">background</span>: <span className="text-green-400">'Computer Science'</span>,<br/>
                 &nbsp;&nbsp;<span className="text-red-400">skills</span>: <span className="text-yellow-400">[</span><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Data Analysis'</span>, <span className="text-green-400">'Data Visualization'</span>,<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Performance Marketing'</span>, <span className="text-green-400">'Product Thinking'</span>,<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Technical Core'</span><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'SQL'</span>, <span className="text-green-400">'Tableau'</span>, <span className="text-green-400">'Microsoft Excel'</span>,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Google Sheets'</span>, <span className="text-green-400">'Data Analysis'</span>, <span className="text-green-400">'React.js'</span>,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Next.js'</span>, <span className="text-green-400">'TypeScript'</span>, <span className="text-green-400">'PostgreSQL'</span><br/>
                 &nbsp;&nbsp;<span className="text-yellow-400">]</span>,<br/>
                 &nbsp;&nbsp;<span className="text-red-400">motto</span>: <span className="text-green-400">'Audere est Facere'</span><br/>
                 <span className="text-yellow-400">{`}`}</span>;
