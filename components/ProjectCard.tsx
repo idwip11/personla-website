@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Folder, Star, Eye } from 'lucide-react';
+import { ExternalLink, Folder, Star, Eye } from 'lucide-react';
 import type { PROJECTS } from '@/data/portfolio';
 
 // Define a type for the project, inferred from the data structure or explicitly defined
@@ -40,6 +40,17 @@ export default function ProjectCard({ project }: { project: Project }) {
              <span className="text-[var(--color-success-fg)] font-medium bg-[var(--color-canvas-subtle)] px-2 py-0.5 rounded-md border border-[var(--color-border-default)]">
                {project.price}
              </span>
+        )}
+        {project.demoUrl && (
+          <Link
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-[var(--color-accent-fg)] font-medium hover:underline"
+          >
+            Live Demo
+            <ExternalLink size={13} />
+          </Link>
         )}
       </div>
     </div>

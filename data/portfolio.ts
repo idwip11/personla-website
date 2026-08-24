@@ -185,6 +185,7 @@ export const PROJECTS = [
     category: "fullstack",
     link: "https://github.com/idwip11/bracket-WC",
     repo: "https://github.com/idwip11/bracket-WC",
+    demoUrl: "https://bracket-wc.vercel.app/",
     public: true
   },
   {
