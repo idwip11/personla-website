@@ -75,8 +75,7 @@ export default function Hero() {
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'SQL'</span>, <span className="text-green-400">'Tableau'</span>, <span className="text-green-400">'Microsoft Excel'</span>,<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Google Sheets'</span>, <span className="text-green-400">'Data Analysis'</span>, <span className="text-green-400">'React.js'</span>,<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-400">'Next.js'</span>, <span className="text-green-400">'TypeScript'</span>, <span className="text-green-400">'PostgreSQL'</span><br/>
-                &nbsp;&nbsp;<span className="text-yellow-400">]</span>,<br/>
-                &nbsp;&nbsp;<span className="text-red-400">motto</span>: <span className="text-green-400">'Audere est Facere'</span><br/>
+                &nbsp;&nbsp;<span className="text-yellow-400">]</span><br/>
                 <span className="text-yellow-400">{`}`}</span>;
               </div>
             </div>
