@@ -409,14 +409,6 @@ export const PROJECTS = [
     image: "/images/certificates/udemy-excel-visualization.jpg"
   },
   {
-    title: "Building a Winning Enterprise Marketing Strategy",
-    description: "Issued by LinkedIn Learning",
-    tags: ["Marketing Strategy", "Enterprise"],
-    category: "certificate",
-    link: "#",
-    image: "/images/certificates/linkedin-enterprise-marketing-strategy.jpg"
-  },
-  {
     title: "Marketing Analytics Foundations",
     description: "Issued by LinkedIn Learning",
     tags: ["Marketing Analytics", "Data"],
@@ -425,28 +417,12 @@ export const PROJECTS = [
     image: "/images/certificates/linkedin-marketing-analytics-foundations.jpg"
   },
   {
-    title: "Marketing Analytics in Action",
-    description: "Issued by LinkedIn Learning",
-    tags: ["Growth Strategies", "Data Insights"],
-    category: "certificate",
-    link: "#",
-    image: "/images/certificates/linkedin-marketing-analytics-action.jpg"
-  },
-  {
     title: "Marketing: How to Use High-Impact Storytelling",
     description: "Issued by LinkedIn Learning",
     tags: ["Marketing", "Storytelling"],
     category: "certificate",
     link: "#",
     image: "/images/certificates/linkedin-high-impact-storytelling.jpg"
-  },
-  {
-    title: "Advanced Facebook Advertising",
-    description: "Issued by LinkedIn Learning",
-    tags: ["Facebook Ads", "Digital Marketing"],
-    category: "certificate",
-    link: "#",
-    image: "/images/certificates/linkedin-advanced-facebook-advertising.jpg"
   },
   {
     title: "Dasar-dasar Analitik Data: Data, Data di Mana-mana",
