@@ -21,7 +21,7 @@ export interface ShowcaseItem {
 export const PROFILE = {
   name: "Imam Dwi Purwanto",
   role: "Data Analyst & Full-Stack Developer",
-  bio: "Data Analyst with a strong Computer Science background and over 3 years of experience driving business impact through data. Beyond traditional analytics (SQL, Tableau, Excel), I leverage my Vibe Coding skills to build dynamic tools and automated systems. I bridge the gap between raw insights and functional software, turning complex datasets into intuitive, user-centric web applications that empower data-driven decisions.\n\nDo you want to work together? Please reach out to me by e-mail",
+  bio: "I'm a Data Analyst and Full-Stack Developer with 3+ years of experience working across data, business operations, and digital solutions. I use SQL, Excel, Tableau, and Google Sheets to analyze data, build dashboards, monitor KPIs, and turn complex information into actionable business insights.\n\nWith a Computer Science background, I also build full-stack web applications using React, Next.js, JavaScript/TypeScript, and PostgreSQL. I enjoy solving problems at the intersection of data, business, and technology, and I'm open to opportunities as a Data Analyst, BI Analyst, Business Analyst, Full-Stack Developer, or Web Developer, including remote roles.",
   location: "Mataram, Indonesia",
   status: "Open to Opportunities",
   socials: [
