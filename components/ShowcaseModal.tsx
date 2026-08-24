@@ -129,6 +129,37 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
             </section>
           )}
 
+          {/* Live Demo Access (Conditional) */}
+          {showcase.demoUrl && showcase.demoCredentials && (
+            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-[var(--foreground)]">Live Demo Access</h3>
+                  <p className="mt-1 text-sm text-[var(--foreground)] opacity-70">Use the test account below to explore the application.</p>
+                </div>
+                <a
+                  href={showcase.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
+                >
+                  Open Live Demo
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--background)] px-4 py-3">
+                  <span className="block text-xs text-[var(--foreground)] opacity-60">Username</span>
+                  <code className="text-sm text-[var(--foreground)]">{showcase.demoCredentials.username}</code>
+                </div>
+                <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--background)] px-4 py-3">
+                  <span className="block text-xs text-[var(--foreground)] opacity-60">Password</span>
+                  <code className="text-sm text-[var(--foreground)]">{showcase.demoCredentials.password}</code>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Project Report - PDFs (Conditional) */}
           {(showcase.pdfUrl || showcase.presentationUrl || showcase.executiveSummaryUrl) && (
             <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
