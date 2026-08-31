@@ -95,16 +95,16 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
                 {showcase.projectDescription.split('\n').filter(p => p.trim()).map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
-                {showcase.demoUrl && (
+                {showcase.publicUrl && (
                   <p>
-                    <span className="font-semibold">Public Demo: </span>
+                    <span className="font-semibold">Public URL: </span>
                     <a
-                      href={showcase.demoUrl}
+                      href={showcase.publicUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[var(--color-accent-fg)] hover:underline break-all"
                     >
-                      {showcase.demoUrl.replace(/^https?:\/\//, '')}
+                      {showcase.publicUrl.replace(/^https?:\/\//, '')}
                     </a>
                   </p>
                 )}
@@ -156,10 +156,18 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
                 >
-                  Open Live Demo
+                  Open Demo Environment
                   <ExternalLink size={14} />
                 </a>
               </div>
+              <a
+                href={showcase.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 block text-sm text-[var(--color-accent-fg)] hover:underline break-all"
+              >
+                {showcase.demoUrl}
+              </a>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--background)] px-4 py-3">
                   <span className="block text-xs text-[var(--foreground)] opacity-60">Username</span>
