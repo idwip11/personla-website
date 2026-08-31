@@ -64,7 +64,7 @@ export const SHOWCASES: ShowcaseItem[] = [
     description: "A centralized property management platform that connects reservations, daily operations, financial performance, and revenue-sharing visibility for HomiQ, funding partners, and property clients.",
     previewImage: "/images/showcases/adiputra-pms-dashboard.png",
     tags: ["PHP", "CodeIgniter 4", "MySQL"],
-    projectDescription: "Adiputra PMS is a property management system built to give HomiQ's Adiputra operations one reliable workspace for managing the full property lifecycle. It brings reservations, room availability, housekeeping, front-desk activity, maintenance, finance, and reporting into a connected workflow, helping teams reduce manual coordination and make faster operational decisions.\n\nThe dashboard turns daily activity into practical business visibility through metrics such as occupancy, revenue, net profit, average stay, rooms rented, check-ins, and check-outs. This helps management monitor property performance, identify operational issues, and evaluate financial outcomes from one place.\n\nThe system also supports collaboration with funding partners and property clients by organizing owner/investor financial views and reporting around revenue-sharing arrangements. This creates a clearer basis for tracking property performance, discussing results, and managing stakeholder expectations.\n\nA live demo is available below for testing. The demo account provides access to the application interface and its core property management workflows.",
+    projectDescription: "Adiputra PMS is a property management system built to give HomiQ's Adiputra operations one reliable workspace for managing the full property lifecycle. It brings reservations, room availability, housekeeping, front-desk activity, maintenance, finance, and reporting into a connected workflow, helping teams reduce manual coordination and make faster operational decisions.\n\nThe dashboard turns daily activity into practical business visibility through metrics such as occupancy, revenue, net profit, average stay, rooms rented, check-ins, and check-outs. This helps management monitor property performance, identify operational issues, and evaluate financial outcomes from one place.\n\nThe system also supports collaboration with funding partners and property clients by organizing owner/investor financial views and reporting around revenue-sharing arrangements. This creates a clearer basis for tracking property performance, discussing results, and managing stakeholder expectations.\n\nThe public demo is available at homiqpms.com/login for testing. The demo account provides access to the application interface and its core property management workflows.",
     keyFeatures: [
       "Centralizes reservations, room availability, housekeeping, front desk, maintenance, finance, and reporting workflows.",
       "Provides an operational dashboard for monitoring occupancy, revenue, net profit, average stay, rooms rented, check-ins, and check-outs.",
@@ -73,7 +73,7 @@ export const SHOWCASES: ShowcaseItem[] = [
     ],
     techStack: ["PHP 8.3", "CodeIgniter 4", "MySQL", "JavaScript", "CSS"],
     githubUrl: "https://github.com/idwip11/PMS-v2",
-    demoUrl: "https://pms-guesthouse-fullstack-production.up.railway.app/login",
+    demoUrl: "https://homiqpms.com/login",
     demoCredentials: {
       username: "imam",
       password: "imam1234"

@@ -95,6 +95,19 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
                 {showcase.projectDescription.split('\n').filter(p => p.trim()).map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
+                {showcase.demoUrl && (
+                  <p>
+                    <span className="font-semibold">Public Demo: </span>
+                    <a
+                      href={showcase.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--color-accent-fg)] hover:underline break-all"
+                    >
+                      {showcase.demoUrl.replace(/^https?:\/\//, '')}
+                    </a>
+                  </p>
+                )}
               </div>
               {showcase.keyFeatures.length > 0 && (
                 <>
