@@ -82,6 +82,15 @@ export const SHOWCASES: ShowcaseItem[] = [
     }
   },
   {
+    title: "New Project Showcase (Draft)",
+    description: "A placeholder showcase card reserved for a new project. Project details and supporting materials will be added soon.",
+    previewImage: "/images/showcases/adiputra-pms-dashboard.png",
+    tags: ["Project", "Draft"],
+    projectDescription: "This showcase page is reserved for a new project. The project description, key features, tools, technologies, preview image, and links will be added in a future update.",
+    keyFeatures: [],
+    techStack: []
+  },
+  {
     title: "Hospitality Business Performance Analysis",
     description: "An analysis of operational and financial performance for HomiQ, transforming booking data into strategic insights for revenue growth and profitability.",
     previewImage: "/images/showcases/hospitality-analysis.png",
