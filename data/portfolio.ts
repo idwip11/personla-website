@@ -86,9 +86,23 @@ export const SHOWCASES: ShowcaseItem[] = [
     description: "A secure web application for managing patient laboratory examinations, results, reference ranges, reports, printable documents, and QR verification for Klinik Rawat Inap Basmalah Medika.",
     previewImage: "/images/showcases/klinik-internal-basmalah-medika.png",
     tags: ["SQL", "PHP", "Internal Management System", "Laboratory"],
-    projectDescription: "This showcase page is reserved for a new project. The project description, key features, tools, technologies, preview image, and links will be added in a future update.",
-    keyFeatures: [],
-    techStack: []
+    projectDescription: "Klinik Internal — Clinical Laboratory Information System is a production web application developed to digitize and streamline laboratory examination workflows at Klinik Rawat Inap Basmalah Medika.\n\nThe system replaces fragmented manual processes with a centralized platform for managing patient data, examination registration, laboratory results, reference ranges, and printable medical reports. It supports multiple examination categories, including general medical check-ups, infant blood tests, drug screening, hematology, clinical chemistry, immunoserology, urinalysis, and additional examinations.\n\nThe application is designed as a practical internal tool that connects registration, examination operations, reporting, document printing, and result verification in one secure workflow.",
+    keyFeaturesTitle: "Key Capabilities:",
+    keyFeatures: [
+      "Reduces manual data entry and duplicated patient records.",
+      "Standardizes laboratory result input using configurable reference ranges.",
+      "Supports Indonesian number formatting, including decimal commas.",
+      "Automatically generates laboratory numbers and records examination time.",
+      "Provides printable A4 laboratory reports with structured result tables.",
+      "Includes QR-based electronic verification so employers or authorized recipients can verify the authenticity of printed drug-screening reports.",
+      "Provides role-based access control for administrators and nurses.",
+      "Protects sensitive analytics and aggregate examination data from unauthorized roles.",
+      "Supports patient archiving while preserving examination history.",
+      "Provides centralized reporting and Excel export for authorized administrators.",
+      "Improves traceability through audit logs and examination history."
+    ],
+    techStack: [],
+    publicUrl: "https://basmalahlab.com/"
   },
   {
     title: "Hospitality Business Performance Analysis",
