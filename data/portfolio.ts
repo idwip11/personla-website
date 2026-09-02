@@ -84,7 +84,7 @@ export const SHOWCASES: ShowcaseItem[] = [
   {
     title: "Klinik Internal — Clinical Laboratory Information System",
     description: "A secure web application for managing patient laboratory examinations, results, reference ranges, reports, printable documents, and QR verification for Klinik Rawat Inap Basmalah Medika.",
-    previewImage: "/images/showcases/adiputra-pms-dashboard.png",
+    previewImage: "/images/showcases/klinik-internal-basmalah-medika.png",
     tags: ["Project", "Draft"],
     projectDescription: "This showcase page is reserved for a new project. The project description, key features, tools, technologies, preview image, and links will be added in a future update.",
     keyFeatures: [],
