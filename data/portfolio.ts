@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileText, Instagram, BookOpen } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram, BookOpen, Timer, ReceiptText, FileUser } from 'lucide-react';
 import TableauIcon from '@/components/TableauIcon';
 
 export interface ShowcaseItem {
@@ -40,6 +40,42 @@ export const PROFILE = {
 
   ]
 };
+
+export const FREE_TOOLS = [
+  {
+    name: "FokusInTime",
+    category: "Productivity",
+    headline: "Make room for deep focus.",
+    description: "Find your working rhythm with a Pomodoro timer, a daily task plan, and ambient sound.",
+    features: ["Pomodoro timer", "Ambient sound", "Mini timer"],
+    url: "https://fokusintime.netlify.app/",
+    previewImage: "/images/free-tools/fokusintime.webp",
+    theme: "focus",
+    icon: Timer,
+  },
+  {
+    name: "NotaKita",
+    category: "Business",
+    headline: "Less admin. Better invoices.",
+    description: "Create professional invoices with Rupiah formatting, QRIS details, and a ready-to-send PDF.",
+    features: ["Rupiah formatting", "QRIS", "PDF export"],
+    url: "https://notakitaid.netlify.app/",
+    previewImage: "/images/free-tools/notakita.webp",
+    theme: "invoice",
+    icon: ReceiptText,
+  },
+  {
+    name: "BuatCV",
+    category: "Career",
+    headline: "Put your experience on paper.",
+    description: "Build a structured CV with LinkedIn PDF import, editable A4 previews, and PDF export.",
+    features: ["LinkedIn import", "Live A4 preview", "PDF export"],
+    url: "https://buatcvai.netlify.app/",
+    previewImage: "/images/free-tools/buatcv.webp",
+    theme: "resume",
+    icon: FileUser,
+  },
+];
 
 export const DEMOS = [
   {

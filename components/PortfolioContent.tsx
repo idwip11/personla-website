@@ -7,6 +7,7 @@ import { DEMOS, PROFILE, PROJECTS, SHOWCASES, type ShowcaseItem } from "@/data/p
 import ProjectCard from "./ProjectCard";
 import ShowcaseCard from "./ShowcaseCard";
 import ShowcaseModal from "./ShowcaseModal";
+import FreeTools from "./FreeTools";
 
 const workFilters = ["All work", "Web applications", "Data & BI"] as const;
 const skills = [
@@ -86,9 +87,11 @@ export default function PortfolioContent() {
         <div className="video-grid">{DEMOS.map(demo => <VideoDemo demo={demo} key={demo.videoId} />)}</div>
       </section>
 
+      <FreeTools />
+
       <section id="certificates" className="section certificates-section">
         <div className="shell">
-          <div className="section-heading" data-reveal><div><span className="eyebrow mono">04 / CONTINUOUS LEARNING</span><h2>Always building on the basics<span className="accent">.</span></h2></div><span className="certificate-total"><Award size={18} />{certificates.length} certificates</span></div>
+          <div className="section-heading" data-reveal><div><span className="eyebrow mono">05 / CONTINUOUS LEARNING</span><h2>Always building on the basics<span className="accent">.</span></h2></div><span className="certificate-total"><Award size={18} />{certificates.length} certificates</span></div>
           <div className="certificate-grid">{(allCertificates ? certificates : certificates.slice(0, 4)).map(certificate => <a className="certificate" data-reveal key={certificate.title} href={certificate.link !== "#" ? certificate.link : certificate.image} target="_blank" rel="noopener noreferrer">
             <div className="certificate-image"><picture><source srcSet={certificate.image?.replace(/\.(png|jpg)$/, ".webp")} type="image/webp" /><img src={certificate.image} alt={certificate.title} loading="lazy" width={900} height={600} /></picture></div>
             <div className="certificate-title"><h3>{certificate.title}</h3><ArrowUpRight size={17} /></div><p>{certificate.description}</p>
@@ -99,7 +102,7 @@ export default function PortfolioContent() {
 
       <footer id="contact" className="contact-section shell">
         <div className="contact-top" data-reveal>
-          <div><span className="eyebrow mono">05 / LET&apos;S CONNECT</span><h2>Have an opportunity<br />in mind<span className="accent">?</span></h2><p>Open to data, business intelligence, and development roles.</p><a className="contact-email" href="mailto:imamdpurwanto11@gmail.com">imamdpurwanto11@gmail.com <ArrowUpRight size={20} /></a></div>
+          <div><span className="eyebrow mono">06 / LET&apos;S CONNECT</span><h2>Have an opportunity<br />in mind<span className="accent">?</span></h2><p>Open to data, business intelligence, and development roles.</p><a className="contact-email" href="mailto:imamdpurwanto11@gmail.com">imamdpurwanto11@gmail.com <ArrowUpRight size={20} /></a></div>
           <a className="contact-orbit" href="mailto:imamdpurwanto11@gmail.com" aria-label="Email Imam Dwi Purwanto">
             <svg viewBox="0 0 160 160" aria-hidden="true"><defs><path id="contact-circle" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0" /></defs><text><textPath href="#contact-circle" textLength="389">LET&apos;S CONNECT / LET&apos;S CONNECT / </textPath></text></svg>
             <Mail size={34} strokeWidth={1.5} />
