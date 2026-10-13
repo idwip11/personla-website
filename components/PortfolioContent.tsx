@@ -102,7 +102,7 @@ export default function PortfolioContent() {
 
       <footer id="contact" className="contact-section shell">
         <div className="contact-top" data-reveal>
-          <div><span className="eyebrow mono">06 / LET&apos;S CONNECT</span><h2>Have an opportunity<br />in mind<span className="accent">?</span></h2><p>Open to data, business intelligence, and development roles.</p><a className="contact-email" href="mailto:imamdpurwanto11@gmail.com">imamdpurwanto11@gmail.com <ArrowUpRight size={20} /></a></div>
+          <div><span className="eyebrow mono">06 / LET&apos;S CONNECT</span><h2>Have an opportunity<br />in mind<span className="accent">?</span></h2><p>Open to data, business intelligence, and building end-to-end web products.</p><a className="contact-email" href="mailto:imamdpurwanto11@gmail.com">imamdpurwanto11@gmail.com <ArrowUpRight size={20} /></a></div>
           <a className="contact-orbit" href="mailto:imamdpurwanto11@gmail.com" aria-label="Email Imam Dwi Purwanto">
             <svg viewBox="0 0 160 160" aria-hidden="true"><defs><path id="contact-circle" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0" /></defs><text><textPath href="#contact-circle" textLength="389">LET&apos;S CONNECT / LET&apos;S CONNECT / </textPath></text></svg>
             <Mail size={34} strokeWidth={1.5} />
