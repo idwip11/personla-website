@@ -1,297 +1,77 @@
 "use client";
 
-import { useEffect, useCallback } from 'react';
-import { X, ExternalLink, Download, Eye, Github } from 'lucide-react';
-import type { SHOWCASES, ShowcaseItem } from '@/data/portfolio';
+import { useEffect, useRef, useState } from "react";
+import { ExternalLink, FileText, Github, LayoutDashboard, X } from "lucide-react";
+import type { ShowcaseItem } from "@/data/portfolio";
 
 export default function ShowcaseModal({ showcase, onClose }: { showcase: ShowcaseItem; onClose: () => void }) {
-
-  const handleEscape = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') onClose();
-  }, [onClose]);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const dashboard = useRef<HTMLDivElement>(null);
+  const [loadDashboard, setLoadDashboard] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', handleEscape);
-
-    // Inject Tableau viz script if tableauEmbed exists
-    if (showcase.tableauEmbed) {
-      const timer = setTimeout(() => {
-        const container = document.getElementById('tableau-embed-container');
-      if (container) {
-        container.innerHTML = showcase.tableauEmbed || '';
-        const scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        container.appendChild(scriptElement);
-
-        // Responsive sizing
-        const divElement = container.querySelector('.tableauPlaceholder');
-        if (divElement) {
-          const vizElement = divElement.getElementsByTagName('object')[0];
-          if (vizElement) {
-            if (window.innerWidth > 800) {
-              vizElement.style.width = '100%';
-              vizElement.style.height = '827px';
-            } else {
-              vizElement.style.width = '100%';
-              vizElement.style.height = '1627px';
-            }
-          }
-        }
-        }
-      }, 100);
-
-      return () => {
-        document.body.style.overflow = '';
-        window.removeEventListener('keydown', handleEscape);
-        clearTimeout(timer);
-      };
-    }
-
+    const element = dialog.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    element?.showModal();
     return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', handleEscape);
+      element?.close();
+      document.body.style.overflow = previousOverflow;
     };
-  }, [handleEscape, showcase.tableauEmbed]);
+  }, []);
+
+  useEffect(() => {
+    if (!loadDashboard || !showcase.tableauEmbed || !dashboard.current) return;
+    const container = dashboard.current;
+    container.innerHTML = showcase.tableauEmbed;
+    const viz = container.querySelector<HTMLElement>("object");
+    if (viz) {
+      viz.style.width = "100%";
+      viz.style.height = window.innerWidth < 720 ? "1200px" : "827px";
+    }
+    const script = document.createElement("script");
+    script.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    script.async = true;
+    container.appendChild(script);
+    return () => { container.replaceChildren(); };
+  }, [loadDashboard, showcase.tableauEmbed]);
+
+  const reports = [
+    { label: "Project report", url: showcase.pdfUrl },
+    { label: "Presentation", url: showcase.presentationUrl },
+    { label: "Executive summary", url: showcase.executiveSummaryUrl },
+  ].filter(report => report.url);
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 backdrop-blur-sm overflow-y-auto"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
-    >
-      <div
-        className="relative w-full max-w-4xl mx-4 my-8 bg-[var(--background)] rounded-lg border border-[var(--color-border-default)] shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-[var(--color-accent-fg)] rounded-t-lg">
-          <h2 className="text-lg font-bold text-white truncate pr-4">{showcase.title}</h2>
-          <button
-            onClick={onClose}
-            className="p-1 rounded-full hover:bg-white/20 transition-colors text-white shrink-0"
-            aria-label="Close modal"
-          >
-            <X size={22} />
-          </button>
-        </div>
-
-        {/* Body */}
-        <div className="p-6 space-y-8">
-          
-          {/* Preview Image */}
-          <div className="w-full rounded-lg overflow-hidden border border-[var(--color-border-default)] bg-[var(--color-canvas-subtle)]">
-            <img 
-              src={showcase.previewImage} 
-              alt={showcase.title}
-              className="w-full h-auto object-cover max-h-[400px]"
-            />
-          </div>
-
-          {/* Project Description */}
-          {showcase.projectDescription && (
-            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <h3 className="text-base font-bold text-[var(--foreground)] mb-3">Project Description</h3>
-              <div className="text-sm text-[var(--foreground)] opacity-80 mb-4 leading-relaxed space-y-3">
-                {showcase.projectDescription.split('\n').filter(p => p.trim()).map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-                {showcase.publicUrl && (
-                  <p>
-                    <span className="font-semibold">Public URL: </span>
-                    <a
-                      href={showcase.publicUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--color-accent-fg)] hover:underline break-all"
-                    >
-                      {showcase.publicUrl.replace(/^https?:\/\//, '')}
-                    </a>
-                  </p>
-                )}
-              </div>
-              {showcase.keyFeatures.length > 0 && (
-                <>
-                  <h4 className="text-sm font-semibold text-[var(--foreground)] mb-2">{showcase.keyFeaturesTitle || "Key Insights & Recommendations:"}</h4>
-                  <ul className="space-y-1.5">
-                    {showcase.keyFeatures.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-[var(--foreground)] opacity-80">
-                        <span className="text-[var(--color-accent-fg)] mt-0.5">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </section>
+    <dialog ref={dialog} className="project-dialog" aria-labelledby="project-title" onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => {
+      if (event.target === event.currentTarget) {
+        const bounds = event.currentTarget.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) onClose();
+      }
+    }}>
+      <div className="dialog-header"><h2 id="project-title">{showcase.title}</h2><button className="icon-button" onClick={onClose} aria-label="Close project details" autoFocus><X size={20} /></button></div>
+      <div className="dialog-content">
+        <picture><source srcSet={showcase.previewImage.replace(/\.(png|jpg)$/, ".webp")} type="image/webp" /><img className="dialog-image" src={showcase.previewImage} alt={showcase.title + " preview"} width={1280} height={720} /></picture>
+        <section className="dialog-section"><h3>Project Description</h3>
+          {showcase.projectDescription.split("\n").filter(paragraph => paragraph.trim()).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+          {showcase.publicUrl && <p><strong>Public URL: </strong><a href={showcase.publicUrl} target="_blank" rel="noopener noreferrer">{showcase.publicUrl}</a></p>}
+          {showcase.keyFeatures.length > 0 && <><h4>{showcase.keyFeaturesTitle || "Key features & insights"}</h4><ul>{showcase.keyFeatures.map(feature => <li key={feature}>{feature}</li>)}</ul></>}
+        </section>
+        {showcase.techStack.length > 0 && <section className="dialog-section"><h3>Tools & Technologies</h3><div className="tags">{showcase.techStack.map(tech => <span key={tech}>{tech}</span>)}</div></section>}
+        {showcase.demoUrl && <section className="dialog-section demo-access">
+          <div className="demo-heading"><h3>Live Demo Access</h3><a className="button button-primary" href={showcase.demoUrl} target="_blank" rel="noopener noreferrer">Open Demo Environment <ExternalLink size={15} /></a></div>
+          <p><a href={showcase.demoUrl} target="_blank" rel="noopener noreferrer">{showcase.demoUrl}</a></p>
+          {showcase.demoCredentials && <dl className="demo-credentials"><div><dt>Username</dt><dd>{showcase.demoCredentials.username}</dd></div><div><dt>Password</dt><dd>{showcase.demoCredentials.password}</dd></div></dl>}
+        </section>}
+        {reports.length > 0 && <section className="dialog-section"><h3>Project Reports</h3><div className="report-links">{reports.map(report => <a className="button button-secondary" href={report.url} target="_blank" rel="noopener noreferrer" key={report.label}><FileText size={16} />{report.label}<ExternalLink size={14} /></a>)}</div></section>}
+        {showcase.githubUrl && <section className="dialog-section dialog-links"><a className="button button-secondary" href={showcase.githubUrl} target="_blank" rel="noopener noreferrer"><Github size={16} />View on GitHub<ExternalLink size={14} /></a></section>}
+        {(showcase.tableauEmbed || showcase.lookerStudioEmbed) && <section className="dialog-section">
+          <h3>Interactive Dashboard</h3>
+          {!loadDashboard ? <button className="button button-primary" onClick={() => setLoadDashboard(true)}><LayoutDashboard size={17} />Open interactive dashboard</button> : (
+            showcase.tableauEmbed ? <div ref={dashboard} className="dashboard-container" /> : <div className="dashboard-container" dangerouslySetInnerHTML={{ __html: showcase.lookerStudioEmbed || "" }} />
           )}
-
-          {/* Tools & Technologies */}
-          {showcase.techStack.length > 0 && (
-            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Tools & Technologies</h3>
-              <div className="flex flex-wrap gap-3">
-                {showcase.techStack.map((tech) => (
-                  <div
-                    key={tech}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--background)] border border-[var(--color-border-default)] text-sm font-medium text-[var(--foreground)]"
-                  >
-                    {tech}
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Live Demo Access (Conditional) */}
-          {showcase.demoUrl && showcase.demoCredentials && (
-            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 className="text-base font-bold text-[var(--foreground)]">Live Demo Access</h3>
-                  <p className="mt-1 text-sm text-[var(--foreground)] opacity-70">Use the test account below to explore the application.</p>
-                </div>
-                <a
-                  href={showcase.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
-                >
-                  Open Demo Environment
-                  <ExternalLink size={14} />
-                </a>
-              </div>
-              <a
-                href={showcase.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 block text-sm text-[var(--color-accent-fg)] hover:underline break-all"
-              >
-                {showcase.demoUrl}
-              </a>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--background)] px-4 py-3">
-                  <span className="block text-xs text-[var(--foreground)] opacity-60">Username</span>
-                  <code className="text-sm text-[var(--foreground)]">{showcase.demoCredentials.username}</code>
-                </div>
-                <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--background)] px-4 py-3">
-                  <span className="block text-xs text-[var(--foreground)] opacity-60">Password</span>
-                  <code className="text-sm text-[var(--foreground)]">{showcase.demoCredentials.password}</code>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Project Report - PDFs (Conditional) */}
-          {(showcase.pdfUrl || showcase.presentationUrl || showcase.executiveSummaryUrl) && (
-            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Project Reports</h3>
-              <div className="flex flex-col gap-4">
-                {showcase.pdfUrl && (
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={showcase.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
-                    >
-                      <Eye size={16} />
-                      View PDF
-                    </a>
-                    <a
-                      href={showcase.pdfUrl}
-                      download
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
-                    >
-                      <Download size={16} />
-                      Download PDF
-                    </a>
-                  </div>
-                )}
-                {showcase.presentationUrl && (
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={showcase.presentationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
-                    >
-                      <Eye size={16} />
-                      View Presentation Data
-                    </a>
-                    <a
-                      href={showcase.presentationUrl}
-                      download
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
-                    >
-                      <Download size={16} />
-                      Download
-                    </a>
-                  </div>
-                )}
-                {showcase.executiveSummaryUrl && (
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={showcase.executiveSummaryUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--color-accent-fg)] text-white font-medium hover:opacity-90 transition-opacity text-sm"
-                    >
-                      <Eye size={16} />
-                      View Executive Summary
-                    </a>
-                    <a
-                      href={showcase.executiveSummaryUrl}
-                      download
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-[var(--color-border-default)] text-[var(--foreground)] font-medium hover:bg-[var(--background)] transition-colors text-sm"
-                    >
-                      <Download size={16} />
-                      Download
-                    </a>
-                  </div>
-                )}
-              </div>
-            </section>
-          )}
-
-          {/* GitHub Link (Conditional) */}
-          {showcase.githubUrl && (
-            <section className="flex justify-center">
-              <a
-                href={showcase.githubUrl}
-                target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--color-btn-primary-bg)] text-white font-medium hover:bg-[var(--color-btn-primary-hover-bg)] transition-colors text-sm"
-            >
-              <Github size={16} />
-              View on GitHub
-              <ExternalLink size={14} />
-            </a>
-          </section>
-          )}
-
-          {/* Tableau Embed (Conditional) */}
-          {showcase.tableauEmbed && (
-            <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-              <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Interactive Dashboard</h3>
-              <div
-                id="tableau-embed-container"
-                className="w-full rounded-lg overflow-hidden border border-[var(--color-border-default)] bg-white min-h-[400px]"
-              />
-            </section>
-          )}
-
-          {/* Looker Studio Embed (Conditional) */}
-          {showcase.lookerStudioEmbed && (
-             <section className="bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] rounded-lg p-6">
-               <h3 className="text-base font-bold text-[var(--foreground)] mb-4">Interactive Dashboard</h3>
-               <div 
-                 className="w-full rounded-lg overflow-hidden border border-[var(--color-border-default)] bg-white min-h-[600px] flex justify-center"
-                 dangerouslySetInnerHTML={{ __html: showcase.lookerStudioEmbed }}
-               />
-             </section>
-          )}
-        </div>
+        </section>}
       </div>
-    </div>
+    </dialog>
   );
 }

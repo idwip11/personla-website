@@ -1,38 +1,20 @@
-"use client";
+import { ArrowUpRight } from "lucide-react";
+import type { ShowcaseItem } from "@/data/portfolio";
 
-import type { SHOWCASES, ShowcaseItem } from '@/data/portfolio';
-
-export default function ShowcaseCard({ showcase, onClick }: { showcase: ShowcaseItem; onClick: () => void }) {
+export default function ShowcaseCard({ showcase, onClick, index }: { showcase: ShowcaseItem; onClick: () => void; index: number }) {
+  const isApp = showcase.tags.includes("PHP");
   return (
-    <div
-      onClick={onClick}
-      className="flex flex-col gap-2 cursor-pointer group"
-    >
-      <div className="aspect-video w-full rounded-md overflow-hidden border border-[var(--color-border-default)] bg-[var(--color-canvas-subtle)] transition-all duration-300 group-hover:border-[var(--color-accent-fg)] group-hover:shadow-[0_0_20px_rgba(88,166,255,0.15)]">
-        <img
-          src={showcase.previewImage}
-          alt={showcase.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-        />
-      </div>
-      <div>
-        <h4 className="font-semibold text-[var(--foreground)] group-hover:text-[var(--color-accent-fg)] transition-colors">
-          {showcase.title}
-        </h4>
-        <p className="text-sm text-[var(--foreground)] opacity-70 mb-2">
-          {showcase.description}
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {showcase.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-0.5 text-xs font-medium rounded-full bg-[var(--color-canvas-subtle)] border border-[var(--color-border-default)] text-[var(--foreground)] opacity-80"
-            >
-              {tag}
-            </span>
-          ))}
+    <article className="showcase" data-reveal>
+      <button className="showcase-trigger" onClick={onClick} aria-label={"View project: " + showcase.title}>
+        <div className="showcase-meta mono"><span>{String(index + 1).padStart(2, "0")} / {isApp ? "WEB APPLICATION" : "DATA & BUSINESS INTELLIGENCE"}</span><ArrowUpRight size={18} /></div>
+        <div className="showcase-image">
+          <picture><source srcSet={showcase.previewImage.replace(/\.(png|jpg)$/, ".webp")} type="image/webp" /><img src={showcase.previewImage} alt={showcase.title + " preview"} width={1280} height={720} loading="lazy" /></picture>
+          <span className="image-action">View project <ArrowUpRight size={16} /></span>
         </div>
-      </div>
-    </div>
+        <h3>{showcase.title}</h3>
+        <p>{showcase.description.startsWith("Default description") ? "An interactive Tableau dashboard exploring generational demographics across West Nusa Tenggara." : showcase.description}</p>
+        <div className="tags">{showcase.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+      </button>
+    </article>
   );
 }

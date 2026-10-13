@@ -1,25 +1,36 @@
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
+"use client";
+
+import { useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+
+const links = [
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#certificates", label: "Certificates" },
+];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-[var(--color-border-muted)] bg-[var(--color-header-bg)] text-[var(--color-foreground)]">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link href="/" className="font-semibold text-lg hover:text-[var(--color-foreground)] text-white">
-            Imam Dwi P
-          </Link>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--foreground)]">
-          <span>Portfolio</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-
-
-        </div>
+    <header className="site-header">
+      <div className="shell nav-inner">
+        <a className="wordmark" href="#" onClick={() => setOpen(false)} aria-label="Imam Dwi Purwanto, home">
+          imam<span className="accent">.</span>
+        </a>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {links.map(link => <a key={link.href} href={link.href}>{link.label}</a>)}
+        </nav>
+        <a className="nav-contact" href="#contact">Let&apos;s connect <ArrowUpRight size={16} /></a>
+        <button className="icon-button mobile-menu-button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+      {open && (
+        <nav id="mobile-navigation" className="mobile-nav shell" aria-label="Mobile navigation" onKeyDown={event => { if (event.key === "Escape") setOpen(false); }}>
+          {links.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={18} /></a>)}
+          <a href="#contact" onClick={() => setOpen(false)}>Contact<ArrowUpRight size={18} /></a>
+        </nav>
+      )}
     </header>
   );
 }

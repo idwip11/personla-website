@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = localFont({ src: "../public/fonts/inter-latin.woff2", display: "swap", variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Imam Dwi Purwanto | Data Analyst & Full-Stack Developer",
   description:
-    "Portfolio of Imam Dwi Purwanto, featuring data analytics dashboards, full-stack applications, and spreadsheet templates.",
+    "Imam Dwi Purwanto, Data Analyst and Full-Stack Developer. Explore production applications, business intelligence dashboards, and data analysis projects.",
 };
 
 export default function RootLayout({
@@ -35,10 +35,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-[var(--background)] text-[var(--foreground)]`}
+        className={inter.variable}
       >
+        <a href="#main" className="skip-link">Skip to content</a>
         <Navbar />
-        <main className="pt-16 min-h-screen">{children}</main>
+        <main id="main">{children}</main>
       </body>
     </html>
   );
