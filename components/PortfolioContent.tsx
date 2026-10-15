@@ -9,7 +9,7 @@ import ShowcaseCard from "./ShowcaseCard";
 import ShowcaseModal from "./ShowcaseModal";
 import FreeTools from "./FreeTools";
 
-const workFilters = ["All work", "Web applications", "Data & BI"] as const;
+const workFilters = ["All work", "Web & company sites", "Data & BI"] as const;
 const skills = [
   { title: "Data & business intelligence", icon: ChartNoAxesCombined, items: ["SQL", "Tableau", "Microsoft Excel", "Power BI", "Google Sheets", "Python"] },
   { title: "Application development", icon: Code2, items: ["React", "Next.js", "TypeScript", "JavaScript", "PHP", "CodeIgniter 4"] },
@@ -45,7 +45,8 @@ export default function PortfolioContent() {
   const [allRepositories, setAllRepositories] = useState(false);
   const [allCertificates, setAllCertificates] = useState(false);
   const [selectedShowcase, setSelectedShowcase] = useState<ShowcaseItem | null>(null);
-  const filteredWork = SHOWCASES.filter(work => filter === "All work" || (filter === "Web applications" ? work.tags.includes("PHP") : !work.tags.includes("PHP")));
+  const isWebProject = (work: ShowcaseItem) => work.category === "WEB APPLICATION" || work.category === "COMPANY WEBSITE" || work.tags.includes("PHP");
+  const filteredWork = SHOWCASES.filter(work => filter === "All work" || (filter === "Web & company sites" ? isWebProject(work) : !isWebProject(work)));
   const visibleWork = allWork || filter !== "All work" ? filteredWork : filteredWork.slice(0, 4);
 
   return (

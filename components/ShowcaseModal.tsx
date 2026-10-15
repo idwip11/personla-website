@@ -52,6 +52,7 @@ export default function ShowcaseModal({ showcase, onClose }: { showcase: Showcas
       <div className="dialog-header"><h2 id="project-title">{showcase.title}</h2><button className="icon-button" onClick={onClose} aria-label="Close project details" autoFocus><X size={20} /></button></div>
       <div className="dialog-content">
         <picture><source srcSet={showcase.previewImage.replace(/\.(png|jpg)$/, ".webp")} type="image/webp" /><img className="dialog-image" src={showcase.previewImage} alt={showcase.title + " preview"} width={1280} height={720} /></picture>
+        {showcase.galleryImages && <section className="dialog-section"><h3>Selected Pages</h3><div className="dialog-gallery">{showcase.galleryImages.map(image => <figure key={image.src}><picture><source srcSet={image.src} type="image/webp" /><img src={image.src} alt={image.alt} width={1200} height={675} loading="lazy" /></picture><figcaption>{image.label}</figcaption></figure>)}</div></section>}
         <section className="dialog-section"><h3>Project Description</h3>
           {showcase.projectDescription.split("\n").filter(paragraph => paragraph.trim()).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
           {showcase.publicUrl && <p><strong>Public URL: </strong><a href={showcase.publicUrl} target="_blank" rel="noopener noreferrer">{showcase.publicUrl}</a></p>}

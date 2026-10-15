@@ -213,6 +213,11 @@ svg { flex-shrink: 0; }
 .dialog-header .icon-button { flex-shrink: 0; }
 .dialog-content { padding: 28px; }
 .dialog-image { width: 100%; height: auto; max-height: 480px; object-fit: contain; background: #fff; border-radius: 4px; }
+.dialog-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.dialog-gallery figure { min-width: 0; margin: 0; }
+.dialog-gallery picture { display: block; }
+.dialog-gallery img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #f5f6f5; border: 1px solid var(--color-border-default); border-radius: 4px; }
+.dialog-gallery figcaption { margin-top: 8px; color: var(--muted); font-size: 11px; }
 .dialog-section { margin-top: 30px; padding-top: 25px; border-top: 1px solid var(--color-border-default); }
 .dialog-section h3 { font-size: 17px; font-weight: 550; margin: 0 0 18px; }
 .dialog-section h4 { font-size: 14px; font-weight: 550; margin: 25px 0 12px; }
@@ -340,6 +345,7 @@ svg { flex-shrink: 0; }
   .dialog-header { padding: 16px; }
   .dialog-header h2 { font-size: 14px; }
   .dialog-content { padding: 16px; }
+  .dialog-gallery { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .dialog-section p, .dialog-section li { font-size: 12px; }
   .demo-heading { flex-direction: column; align-items: flex-start; }
   .demo-credentials { grid-template-columns: 1fr 1fr; gap: 10px; }

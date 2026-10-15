@@ -5,6 +5,8 @@ export interface ShowcaseItem {
   title: string;
   description: string;
   previewImage: string;
+  category?: "WEB APPLICATION" | "COMPANY WEBSITE" | "DATA & BUSINESS INTELLIGENCE";
+  galleryImages?: { src: string; alt: string; label: string }[];
   tags: string[];
   projectDescription: string;
   keyFeatures: string[];
@@ -139,6 +141,29 @@ export const SHOWCASES: ShowcaseItem[] = [
     ],
     techStack: [],
     publicUrl: "https://basmalahlab.com/"
+  },
+  {
+    title: "PT Export Lombok — Clove Export Website",
+    description: "A bilingual B2B company website for an Indonesian clove exporter, showcasing product grades and quality while guiding international buyers toward sample and quotation inquiries.",
+    previewImage: "/images/showcases/lombok-export/home-hero.webp",
+    category: "COMPANY WEBSITE",
+    galleryImages: [
+      { src: "/images/showcases/lombok-export/product-catalog.webp", alt: "Product catalog featuring whole cloves, clove stems, and clove oil", label: "Product catalog" },
+      { src: "/images/showcases/lombok-export/clove-landing.webp", alt: "Dedicated clove landing page with product and export information", label: "Clove landing page" },
+      { src: "/images/showcases/lombok-export/grade-comparison.webp", alt: "Lalpari Grade A and AB6 export grade comparison", label: "Export grade comparison" },
+      { src: "/images/showcases/lombok-export/inquiry-form.webp", alt: "Buyer inquiry form for clove quotations and samples", label: "Buyer inquiry flow" }
+    ],
+    tags: ["Company Website", "B2B", "Lead Generation", "Vite"],
+    projectDescription: "PT Export Lombok's bilingual company website presents Lombok-grown cloves to international B2B buyers. The homepage introduces product origin, sourcing, quality, and the export portfolio, while a dedicated clove landing page explains Lalpari and AB6 grades, export details, and buyer FAQs.\n\nProduct and inquiry calls to action guide visitors toward requesting a sample or quotation. The inquiry form collects buyer and order details, then prepares them for a direct conversation with the export desk through WhatsApp.\n\nBuilt as a responsive static website with Vite, the project is designed to explain the offer clearly, build buyer confidence, and turn visits into export inquiries. Testimonials on the landing page are marked as mock content and should be replaced with verified client feedback before a commercial launch.",
+    keyFeatures: [
+      "Bilingual English and Indonesian content across the company site and clove landing page.",
+      "Product catalog presents clove grades, product uses, and export specifications.",
+      "Dedicated Lalpari and AB6 landing page with grade details and buyer FAQs.",
+      "Inquiry form gathers company, destination, grade, and estimated-volume details.",
+      "WhatsApp calls to action connect prospective buyers with the export desk.",
+      "Responsive static build prepared for deployment to static hosting."
+    ],
+    techStack: ["HTML", "CSS", "JavaScript", "Vite"]
   },
   {
     title: "Hospitality Business Performance Analysis",
